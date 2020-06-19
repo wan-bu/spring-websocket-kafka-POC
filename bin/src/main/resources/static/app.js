@@ -21,7 +21,7 @@ function connect() {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/positions', function (greeting) {
             showGreeting(greeting.body);
-        }); 
+        });
     });
 }
 
@@ -38,13 +38,12 @@ function sendPosition(x,y) {
 }
 
 function showGreeting(message) {
-	console.log("listeeeeeeeeeeeeeeeeeeeeeeeen ==> "+message);
     $("#greetings").append("<tr><td>" + message + "</td></tr>");
 }
 
-$(document).ready(function () {
-	connect();
-});
+//$(document).ready(function () {
+//	connect();
+//});
 
 $(document).mousedown(function(event){
     sendPosition(event.pageX,event.pageY);
